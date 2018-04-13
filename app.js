@@ -17,7 +17,6 @@ fetch(listURL)
     response.drinks.map(drink => {
         var liTag = document.createElement('li')
         var imgTag = document.createElement('img')
-        var ulTag = document.createElement('ul')
         liTag.textContent = drink.strDrink
         imgTag.src = drink.strDrinkThumb
         ulTag.appendChild(liTag)
@@ -38,13 +37,13 @@ fetch(listURL)
         response.drinks.map(drink => {
             var liTag = document.createElement('li')
             var imgTag = document.createElement('img')
-            var ulTag = document.createElement('ul')
+            var ul = document.createElement('ul')
              liTag.textContent = drink.strDrink
              imgTag.src = drink.strDrinkThumb
-             ulTag.appendChild(liTag)
-             ulTag.appendChild(imgTag)
-             ulTag.classList.add('smoothieList')
-             document.getElementById('smoothieContainer').appendChild(ulTag)
+             ul.appendChild(liTag)
+             ul.appendChild(imgTag)
+             ul.classList.add('smoothieList')
+             document.getElementById('smoothieContainer').appendChild(ul)
              liTag.addEventListener("click", loadSmoothie)
            })
 
