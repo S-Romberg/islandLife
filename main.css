@@ -1,8 +1,19 @@
+audio {
+  position: fixed;
+  width: 5rem;
+}
 h1 {
   display: flex;
   justify-content: center;
 }
-
+h2 {
+  text-align: center;
+}
+#picture {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
 body {
   width: 100%;
   display: flex;
@@ -121,7 +132,8 @@ p {
 }
 
 #doItPage3 {
-  height: 52rem;
+  height: 48rem;
+
 }
 
 #drinkContainer, #smoothieContainer {
