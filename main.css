@@ -156,6 +156,9 @@ p {
   border-radius: 5%
 }
 
+.parallax-container img {
+  width: 800px;
+}
 footer {
   display: flex;
   align-items: center;
