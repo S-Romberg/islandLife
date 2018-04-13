@@ -5,6 +5,9 @@ nav ul a,
 nav .brand-logo {
   color: #444;
 }
+.mainText {
+text-align: center;
+}
 p {
   line-height: 2rem;
 }
