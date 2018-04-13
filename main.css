@@ -125,6 +125,11 @@ p {
   margin-bottom: 10px;
   margin-top: 5px;
 }
+.smoothieList img {
+  width: 200px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
 #drinkRecipie, #smoothieRecipie {
   border: 2px solid black;
   width: 60rem;
