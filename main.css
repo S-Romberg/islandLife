@@ -105,20 +105,20 @@ img {
   width: 200px;
 }
 
-.doItPage {
+#doItPage1, #doItPage2 {
   display: flex;
   overflow: auto;
   height: 60rem;
   margin: 5px;
 }
 
-#drinkContainer {
+#drinkContainer, #smoothieContainer {
   border: 2px solid black;
   width: 20rem;
   overflow: auto;
 }
 
-#drinkRecipie {
+#drinkRecipie, #smoothieRecipie {
   border: 2px solid black;
   width: 60rem;
 }
