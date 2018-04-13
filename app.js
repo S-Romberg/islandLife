@@ -12,12 +12,11 @@ fetch(listURL)
        return response.json();
     })
     .then(function(response){
-      var drinkList = ulTag
       console.log(response);
-      response.drinks.reduce(acc, drink => {
-        liTag.textContent = drink.strDrink
-        acc += liTag
-      }, [])
+    console.log(response.drinks.map(drink => {
+        ulTag.appendChild(liTag)
+        return liTag.textContent = drink.strDrink
+      }))
     })
 
 
