@@ -23,7 +23,7 @@ fetch(listURL)
         ulTag.appendChild(imgTag)
         ulTag.classList.add("drinkList")
         liTag.classList.add(drink.idDrink)
-        document.getElementsByTagName('body')[0].appendChild(ulTag)
+        document.getElementById('drinkContainer').appendChild(ulTag)
         liTag.addEventListener("click", loadAlcohol)
       })
 
@@ -42,7 +42,7 @@ fetch(listURL)
           liTag.appendChild(pTag)
           pTag.classList.add("smoothieIngList")
           ulTag.classList.add("drinkList")
-          document.getElementsByTagName('body')[0].appendChild(ulTag)
+          document.getElementById('').appendChild(ulTag)
         })
       })
 
@@ -54,6 +54,15 @@ function loadAlcohol(){
       return response.json();
   }) .then(function(response){
       console.log(response);
-
+      response.drinks.map(info => {
+        console.log(info);
+        var liTag = document.createElement('li')
+        liTag.textContent = info.strDrink
+        ulTag.appendChild(liTag)
+        liTag.appendChild(pTag)
+        pTag.classList.add("drinkIngList")
+        ulTag.classList.add("drinkList")
+        document.getElementById('').appendChild(ulTag)
+      })
   });
 }
