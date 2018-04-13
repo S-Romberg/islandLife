@@ -1,14 +1,12 @@
 const listURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink"
 const smoothieURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=smoothie"
 const searchURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
-
 var pTag = document.createElement('p')
 var h2Tag = document.createElement('h1')
 var ulTag = document.createElement('ul')
 var liTag = document.createElement('li')
 var divTag = document.createElement('div')
 var imgTag = document.createElement('img')
-
 fetch(listURL)
     .then(function(response){
        return response.json();
@@ -26,14 +24,12 @@ fetch(listURL)
         document.getElementById('drinkContainer').appendChild(ulTag)
         liTag.addEventListener("click", loadAlcohol)
       })
-
     })
     fetch(smoothieURL)
         .then(function(response){
            return response.json();
         })
         .then(function(response){
-          console.log(response)
           var ul = document.createElement('ul')
         response.drinks.map(drink => {
             var liTag = document.createElement('li')
@@ -46,11 +42,9 @@ fetch(listURL)
              liTag.classList.add(drink.idDrink)
              document.getElementById('smoothieContainer').appendChild(ul)
              liTag.addEventListener("click", loadSmoothie)
-     })
-})
-
+           })
+         })
 function loadSmoothie(event){
-  console.log("yay!")
   document.getElementById('smoothieRecipie').innerHTML = ""
   event.preventDefault()
       var annoyingList = []
@@ -59,7 +53,6 @@ function loadSmoothie(event){
          .then(function(response){
           return response.json();
       }) .then(function(response){
-          console.log(response);
           response.drinks.map(info => {
             if(info.idDrink === event.target.className){
             var liTag = document.createElement('li')
@@ -91,7 +84,6 @@ function loadSmoothie(event){
             annoyingList2.push(info.strMeasure6)
             annoyingList2.push(info.strMeasure7)
             annoyingList2.push(info.strMeasure8)
-            console.log("annoying", annoyingList, annoyingList2);
             pTag.classList.add("smoothieIngList")
             append.appendChild(h2Tag)
             append.appendChild(imgTag)
@@ -100,7 +92,6 @@ function loadSmoothie(event){
           })
           annoyingList.map(item => {
             if(item !== ""){
-              console.log('item 1: ', item);
             var liTag = document.createElement('li')
             var append = document.getElementById('smoothieRecipie')
             liTag.textContent = item
@@ -119,21 +110,16 @@ function loadSmoothie(event){
     })
   })
 }
-
-
 function loadAlcohol(){
-  console.log("yay!")
   document.getElementById('drinkRecipie').innerHTML = ""
   event.preventDefault()
   fetch(searchURL + this.classList)
      .then(function(response){
       return response.json();
   }) .then(function(response){
-      console.log(response);
       var annoyingList = []
       var annoyingList2 = []
       response.drinks.map(info => {
-        console.log(info);
         var liTag = document.createElement('li')
         var append = document.getElementById('drinkRecipie')
         var imgTag = document.createElement('img')
@@ -163,7 +149,6 @@ function loadAlcohol(){
         annoyingList2.push(info.strMeasure6)
         annoyingList2.push(info.strMeasure7)
         annoyingList2.push(info.strMeasure8)
-        console.log("annoying", annoyingList, annoyingList2);
         pTag.classList.add("drinkIngList")
         append.appendChild(h2Tag)
         append.appendChild(imgTag)
@@ -171,7 +156,6 @@ function loadAlcohol(){
       })
       annoyingList.map(item => {
         if(item !== ""){
-          console.log('item 1: ', item);
         var liTag = document.createElement('li')
         var append = document.getElementById('drinkRecipie')
         liTag.textContent = item
