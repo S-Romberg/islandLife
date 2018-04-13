@@ -12,13 +12,15 @@ fetch(listURL)
        return response.json();
     })
     .then(function(response){
-      console.log(response);
-    console.log(response.drinks.map(drink => {
+      console.log(response)
+    response.drinks.map(drink => {
+        var liTag = document.createElement('li')
+        liTag.textContent = drink.strDrink
         ulTag.appendChild(liTag)
-        return liTag.textContent = drink.strDrink
-      }))
+        ulTag.classList.add("drinkList")
+        document.getElementsByTagName('body')[0].appendChild(ulTag)
+      })
     })
-
 
 fetch(smoothieURL)
     .then(function(response){
