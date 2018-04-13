@@ -34,10 +34,10 @@ fetch(listURL)
         })
         .then(function(response){
           console.log(response)
+          var ul = document.createElement('ul')
         response.drinks.map(drink => {
             var liTag = document.createElement('li')
             var imgTag = document.createElement('img')
-            var ul = document.createElement('ul')
              liTag.textContent = drink.strDrink
              imgTag.src = drink.strDrinkThumb
              ul.appendChild(liTag)
@@ -62,7 +62,7 @@ function loadSmoothie(){
       response.drinks.map(info => {
         console.log(info);
         var liTag = document.createElement('li')
-        var append = document.getElementById('smoothieRecipie')
+        var append = document.getElementById('smoothieContainer')
         var imgTag = document.createElement('img')
         h2Tag.textContent = info.strDrink
         pTag.textContent = info.strInstructions
@@ -110,7 +110,7 @@ function loadSmoothie(){
           console.log("this api sucks so much");
         } else if (item !== '↵'){
         var liTag = document.createElement('li')
-        var append = document.getElementById('drinkRecipie')
+        var append = document.getElementById('smoothieRecipie')
         liTag.textContent = item
         append.appendChild(liTag)
       }
