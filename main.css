@@ -1,30 +1,36 @@
-h1{
+h1 {
   display: flex;
   justify-content: center;
 }
-nav ul a,
-nav .brand-logo {
+
+nav ul a, nav .brand-logo {
   color: #444;
 }
+
 .mainText {
-text-align: center;
+  text-align: center;
 }
+
 p {
   line-height: 2rem;
 }
+
 .sidenav-trigger {
   color: #26a69a;
 }
+
 .parallax-container {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
-@media only screen and (max-width : 992px) {
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -33,40 +39,45 @@ p {
     top: 10%;
   }
 }
-@media only screen and (max-width : 600px) {
+
+@media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0;
   }
 }
+
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
-footer.page-footer {
-  margin: 0;
-}
-nav ul a,
-nav .brand-logo {
+
+nav ul a, nav .brand-logo {
   color: #444;
 }
+
 p {
   line-height: 2rem;
 }
+
 .sidenav-trigger {
   color: #26a69a;
 }
+
 .parallax-container {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
-@media only screen and (max-width : 992px) {
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -75,32 +86,53 @@ p {
     top: 10%;
   }
 }
-@media only screen and (max-width : 600px) {
+
+@media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0;
   }
 }
+
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
-footer.page-footer {
-  margin: 0;
+
+img {
+  width: 200px;
 }
-.how2{
+
+.doItPage {
+  display: flex;
+  overflow: auto;
+  height: 60rem;
+  margin: 5px;
+}
+
+#drinkContainer {
+  border: 2px solid black;
+  width: 20rem;
+  overflow: auto;
+}
+
+#drinkRecipie {
+  border: 2px solid black;
+  width: 60rem;
+}
+
+.how2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.how2use{
-  
+.how2use {
   height: 10em;
   width: 60%;
   border: 1px;
   border-radius: 5%
-
 }
