@@ -17,6 +17,7 @@ fetch(listURL)
     response.drinks.map(drink => {
         var liTag = document.createElement('li')
         var imgTag = document.createElement('img')
+        var ulTag = document.createElement('ul')
         liTag.textContent = drink.strDrink
         imgTag.src = drink.strDrinkThumb
         ulTag.appendChild(liTag)
@@ -37,32 +38,87 @@ fetch(listURL)
         response.drinks.map(drink => {
             var liTag = document.createElement('li')
             var imgTag = document.createElement('img')
+            var ulTag = document.createElement('ul')
              liTag.textContent = drink.strDrink
              imgTag.src = drink.strDrinkThumb
              ulTag.appendChild(liTag)
              ulTag.appendChild(imgTag)
              ulTag.classList.add('smoothieList')
              document.getElementById('smoothieContainer').appendChild(ulTag)
-            //  liTag.addEventListener("click", loadSmoothie)
+             liTag.addEventListener("click", loadSmoothie)
            })
 
         })
-    // fetch(smoothieURL)
-    //   .then(function(response) {
-    //     return response.json();
-    //   })
-    //   .then(response => {
-    //     response.drinks.map(drink => {
-    //       console.log(drink.strInstructions);
-    //       var liTag = document.createElement('li')
-    //       liTag.textContent = drink.strDrink
-    //       ulTag.appendChild(liTag)
-    //       liTag.appendChild(pTag)
-    //       pTag.classList.add("smoothieIngList")
-    //       ulTag.classList.add("smoothieList")
-    //       document.getElementById('smoothieContainer').appendChild(ulTag)
-    //     })
-    //   })
+function loadSmoothie(){
+  console.log("yay!")
+  document.getElementById('smoothieRecipie').innerHTML = ""
+  event.preventDefault()
+  fetch(smoothieURL)
+     .then(function(response){
+      return response.json();
+  }) .then(function(response){
+      console.log(response);
+      var annoyingList = []
+      var annoyingList2 = []
+      response.drinks.map(info => {
+        console.log(info);
+        var liTag = document.createElement('li')
+        var append = document.getElementById('smoothieRecipie')
+        var imgTag = document.createElement('img')
+        h2Tag.textContent = info.strDrink
+        pTag.textContent = info.strInstructions
+        imgTag.src = info.strDrinkThumb
+        annoyingList.push(info.strIngredient1)
+        annoyingList.push(info.strIngredient2)
+        annoyingList.push(info.strIngredient3)
+        annoyingList.push(info.strIngredient4)
+        annoyingList.push(info.strIngredient5)
+        annoyingList.push(info.strIngredient6)
+        annoyingList.push(info.strIngredient7)
+        annoyingList.push(info.strIngredient8)
+        annoyingList.push(info.strIngredient9)
+        annoyingList.push(info.strIngredient10)
+        annoyingList.push(info.strIngredient11)
+        annoyingList.push(info.strIngredient12)
+        annoyingList.push(info.strIngredient13)
+        annoyingList.push(info.strIngredient14)
+        annoyingList.push(info.strIngredient15)
+        annoyingList2.push(info.strMeasure1)
+        annoyingList2.push(info.strMeasure2)
+        annoyingList2.push(info.strMeasure3)
+        annoyingList2.push(info.strMeasure4)
+        annoyingList2.push(info.strMeasure5)
+        annoyingList2.push(info.strMeasure6)
+        annoyingList2.push(info.strMeasure7)
+        annoyingList2.push(info.strMeasure8)
+        console.log("annoying", annoyingList, annoyingList2);
+        pTag.classList.add("smoothieIngList")
+        append.appendChild(h2Tag)
+        append.appendChild(pTag)
+        append.appendChild(imgTag)
+      })
+      annoyingList.map(item => {
+        if(item !== ""){
+          console.log('item 1: ', item);
+        var liTag = document.createElement('li')
+        var append = document.getElementById('smoothieRecipie')
+        liTag.textContent = item
+        append.appendChild(liTag)
+      }
+    })
+      annoyingList2.map(item => {
+        if(item !== ""){
+          console.log("this api sucks so much");
+        } else if (item !== '↵'){
+        var liTag = document.createElement('li')
+        var append = document.getElementById('drinkRecipie')
+        liTag.textContent = item
+        append.appendChild(liTag)
+      }
+    })
+  })
+}
+
 
 function loadAlcohol(){
   console.log("yay!")
@@ -106,7 +162,7 @@ function loadAlcohol(){
         annoyingList2.push(info.strMeasure6)
         annoyingList2.push(info.strMeasure7)
         annoyingList2.push(info.strMeasure8)
-        console.log("annoying", annoyingList);
+        console.log("annoying", annoyingList, annoyingList2);
         pTag.classList.add("drinkIngList")
         append.appendChild(h2Tag)
         append.appendChild(pTag)
@@ -114,6 +170,7 @@ function loadAlcohol(){
       })
       annoyingList.map(item => {
         if(item !== ""){
+          console.log('item 1: ', item);
         var liTag = document.createElement('li')
         var append = document.getElementById('drinkRecipie')
         liTag.textContent = item
@@ -122,6 +179,8 @@ function loadAlcohol(){
     })
       annoyingList2.map(item => {
         if(item !== ""){
+          console.log("this api sucks so much");
+        } else if (item !== '↵'){
         var liTag = document.createElement('li')
         var append = document.getElementById('drinkRecipie')
         liTag.textContent = item
