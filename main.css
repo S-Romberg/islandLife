@@ -182,6 +182,14 @@ p {
 #drinkRecipie img, #smoothieRecipie img {
   width: 400px;
 }
+#drinkContainer li, #smoothieContainer li {
+  text-decoration: underline;
+}
+
+#drinkContainer li:hover, #smoothieContainer li:hover {
+  color: blue;
+  cursor: grab;
+}
 
 .how2 {
   display: flex;
