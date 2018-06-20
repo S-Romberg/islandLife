@@ -6,3 +6,6 @@ Our team of 3 made a web app that pulls cocktails and smoothies from an api and 
 
 #### Created with:
 Javascript, CSS, HTML, Bootstrap
+
+#### [Deployed site](https://islandtoyou.firebaseapp.com/) 
+Warning! It does play music so prepare yourself and your computer accordingly. 
